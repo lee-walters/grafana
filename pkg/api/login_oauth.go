@@ -68,6 +68,8 @@ func genPKCECode() (string, string, error) {
 }
 
 func (hs *HTTPServer) OAuthLogin(ctx *models.ReqContext) {
+	oauthLogger.Info(fmt.Sprintf("START OAUTH LOGIN..."))
+
 	loginInfo := models.LoginInfo{
 		AuthModule: "oauth",
 	}
@@ -232,6 +234,15 @@ func (hs *HTTPServer) OAuthLogin(ctx *models.ReqContext) {
 	if err != nil {
 		hs.handleOAuthLoginErrorWithRedirect(ctx, loginInfo, err)
 		return
+	}
+
+	oauthLogger.Info(fmt.Sprintf("OAUTH ROLE: %s", userInfo.Role))
+	if userInfo.Role != "" {
+		// Sync user with mappings to org, team and roles from Auth0 via the Grafana API and wait.
+		oauthLogger.Info(fmt.Sprintf("Invoking user management service to sync mappings from OAuth role: %s", userInfo.Role))
+		if err = hs.userManagement.SyncUser(context.Background(), ctx.SignedInUser, userInfo.Email, userInfo.Role); err != nil {
+			oauthLogger.Error("Error syncing user", "userSync", err)
+		}
 	}
 
 	// login
