@@ -3437,7 +3437,7 @@ exports[`better eslint`] = {
       [88, 5, 18, "Do not use any type assertions.", "252710807"],
       [88, 20, 3, "Unexpected any. Specify a different type.", "193409811"]
     ],
-    "public/app/core/components/Login/LoginServiceButtons.tsx:1939846488": [
+    "public/app/core/components/Login/LoginServiceButtons.tsx:4193213575": [
       [65, 13, 36, "Do not use any type assertions.", "4066074242"],
       [71, 13, 45, "Do not use any type assertions.", "2905055610"]
     ],

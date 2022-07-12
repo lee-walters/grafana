@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { config } from '@grafana/runtime';
-import { Icon, IconName } from '@grafana/ui';
+import { IconName } from '@grafana/ui';
 
 export interface FooterLink {
   text: string;
@@ -69,20 +69,24 @@ export function setVersionLinkFn(fn: typeof getFooterLinks) {
 }
 
 export const Footer: FC = React.memo(() => {
-  const links = getFooterLinks().concat(getVersionLinks());
+  // const links = getFooterLinks().concat(getVersionLinks());
 
   return (
     <footer className="footer">
       <div className="text-center">
-        <ul>
-          {links.map((link) => (
-            <li key={link.text}>
-              <a href={link.url} target={link.target} rel="noopener" id={link.id}>
-                {link.icon && <Icon name={link.icon} />} {link.text}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <p>
+          Only authorised use of this system is permitted. Copyright © 2022 McLaren Applied powered by Grafana © . All
+          rights reserved. Policy information available on the McLaren Applied site.
+        </p>
+        {/*<ul>*/}
+        {/*  {links.map((link) => (*/}
+        {/*    <li key={link.text}>*/}
+        {/*      <a href={link.url} target={link.target} rel="noopener" id={link.id}>*/}
+        {/*        {link.icon && <Icon name={link.icon} />} {link.text}*/}
+        {/*      </a>*/}
+        {/*    </li>*/}
+        {/*  ))}*/}
+        {/*</ul>*/}
       </div>
     </footer>
   );

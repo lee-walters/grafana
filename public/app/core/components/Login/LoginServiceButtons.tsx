@@ -159,7 +159,7 @@ export const LoginServiceButtons = () => {
             fullWidth
           >
             <Icon className={styles.buttonIcon} name={service.icon} />
-            Sign in with {service.name}
+            Sign in with McLaren Applied {service.name}
           </LinkButton>
         ))}
       </VerticalGroup>

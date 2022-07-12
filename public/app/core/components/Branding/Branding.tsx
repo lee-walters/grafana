@@ -10,7 +10,7 @@ export interface BrandComponentProps {
 }
 
 const LoginLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/grafana_icon.svg" alt="Grafana" />;
+  return <img className={className} src="public/img/AppliedlogoaltRGBwht40pc.png" alt="McLaren Applied" />;
 };
 
 const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
@@ -24,7 +24,7 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
       right: 0;
       bottom: 0;
       top: 0;
-      background: url(public/img/g8_login_${theme.isDark ? 'dark' : 'light'}.svg);
+      background: rgb(10, 10, 10);
       background-position: top center;
       background-size: auto;
       background-repeat: no-repeat;
@@ -42,8 +42,21 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
   return <div className={cx(background, className)}>{children}</div>;
 };
 
+const MenuLogoStyle = {
+  'border-radius': 0,
+  width: '36px',
+  height: 'auto',
+};
+
 const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/grafana_icon.svg" alt="Grafana" />;
+  return (
+    <img
+      className={className}
+      style={MenuLogoStyle}
+      src="public/img/McLaren_RGB_Speedmark-White.png"
+      alt="McLaren Applied"
+    />
+  );
 };
 
 const LoginBoxBackground = () => {
@@ -59,8 +72,8 @@ export class Branding {
   static LoginBackground = LoginBackground;
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
-  static AppTitle = 'Grafana';
-  static LoginTitle = 'Welcome to Grafana';
+  static AppTitle = 'McLaren Applied';
+  static LoginTitle = '';
   static GetLoginSubTitle = (): null | string => {
     return null;
   };
