@@ -2,8 +2,6 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
-import * as runtimeMock from '@grafana/runtime';
-
 import { LoginPage } from './LoginPage';
 
 const postMock = jest.fn();
@@ -37,7 +35,6 @@ describe('Login Page', () => {
   it('renders correctly', () => {
     render(<LoginPage />);
 
-    expect(screen.getByRole('heading', { name: 'Welcome to Grafana' })).toBeInTheDocument();
     expect(screen.getByRole('textbox', { name: 'Username input field' })).toBeInTheDocument();
     expect(screen.getByLabelText('Password input field')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: 'Login button' })).toBeInTheDocument();
@@ -84,17 +81,5 @@ describe('Login Page', () => {
 
     await waitFor(() => expect(postMock).toHaveBeenCalledWith('/login', { password: 'test', user: 'admin' }));
     expect(window.location.assign).toHaveBeenCalledWith('/');
-  });
-  it('renders social logins correctly', () => {
-    (runtimeMock as any).config.oauth = {
-      okta: {
-        name: 'Okta Test',
-        icon: 'signin',
-      },
-    };
-
-    render(<LoginPage />);
-
-    expect(screen.getByRole('link', { name: 'Sign in with Okta Test' })).toBeInTheDocument();
   });
 });

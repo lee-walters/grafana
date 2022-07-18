@@ -48,6 +48,7 @@ describe('Render', () => {
   });
 
   it('should render component', async () => {
+    jest.spyOn(console, 'error').mockImplementation();
     setup();
     const sidemenu = await screen.findByTestId('sidemenu');
     expect(sidemenu).toBeInTheDocument();

@@ -3433,10 +3433,6 @@ exports[`better eslint`] = {
       [81, 21, 3, "Unexpected any. Specify a different type.", "193409811"],
       [92, 21, 3, "Unexpected any. Specify a different type.", "193409811"]
     ],
-    "public/app/core/components/Login/LoginPage.test.tsx:1437148752": [
-      [88, 5, 18, "Do not use any type assertions.", "252710807"],
-      [88, 20, 3, "Unexpected any. Specify a different type.", "193409811"]
-    ],
     "public/app/core/components/Login/LoginServiceButtons.tsx:1939846488": [
       [65, 13, 36, "Do not use any type assertions.", "4066074242"],
       [71, 13, 45, "Do not use any type assertions.", "2905055610"]
@@ -5155,7 +5151,7 @@ exports[`better eslint`] = {
       [17, 40, 3, "Unexpected any. Specify a different type.", "193409811"],
       [56, 32, 3, "Unexpected any. Specify a different type.", "193409811"]
     ],
-    "public/app/features/dashboard/containers/DashboardPage.test.tsx:1097909569": [
+    "public/app/features/dashboard/containers/DashboardPage.test.tsx:1203999874": [
       [76, 38, 3, "Unexpected any. Specify a different type.", "193409811"],
       [76, 59, 3, "Unexpected any. Specify a different type.", "193409811"],
       [108, 19, 49, "Do not use any type assertions.", "3190798329"],
@@ -5933,7 +5929,7 @@ exports[`better eslint`] = {
       [21, 8, 234, "Do not use any type assertions.", "3090222521"],
       [21, 8, 221, "Do not use any type assertions.", "3324598982"]
     ],
-    "public/app/features/explore/Wrapper.test.tsx:3368179244": [
+    "public/app/features/explore/Wrapper.test.tsx:920587884": [
       [29, 19, 3, "Unexpected any. Specify a different type.", "193409811"],
       [71, 5, 30, "Do not use any type assertions.", "1427058760"],
       [90, 12, 30, "Do not use any type assertions.", "1427058760"],

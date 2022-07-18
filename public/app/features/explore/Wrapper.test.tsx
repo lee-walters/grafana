@@ -274,7 +274,7 @@ describe('Wrapper', () => {
     // to include the datasource
     await screen.findByText(`loki Editor input: { label="value"}`);
 
-    await waitFor(() => expect(document.title).toEqual('Explore - loki - Grafana'));
+    await waitFor(() => expect(document.title).toEqual('Explore - loki - McLaren Applied'));
   });
   it('changes the document title to include the two datasources in use in split view mode', async () => {
     const urlParams = {
@@ -289,7 +289,7 @@ describe('Wrapper', () => {
     await screen.findByText(`loki Editor input: { label="value"}`);
 
     store.dispatch(splitOpen<any>({ datasourceUid: 'elastic', query: { expr: 'error' } }) as any);
-    await waitFor(() => expect(document.title).toEqual('Explore - loki | elastic - Grafana'));
+    await waitFor(() => expect(document.title).toEqual('Explore - loki | elastic - McLaren Applied'));
   });
 
   it('removes `from` and `to` parameters from url when first mounted', async () => {
